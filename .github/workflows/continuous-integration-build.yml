@@ -47,5 +47,6 @@ jobs:
       - name: upload war to EC2
         run: |
           ls
+          cd ./initial/target
           scp -i private_key.pem ./initial/target/spring-boot-initial-0.0.1-SNAPSHOT.war ec2-user@${{ secrets.PUBLIC_IP }}:/opt/tomcat/webapps
 
