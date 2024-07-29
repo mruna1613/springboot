@@ -30,8 +30,7 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.SECRET_KEY }}
         run: |
-          echo "$SSH_KEY" > private_key.pem
-          chmod 600 private_key.pem
+          echo "$SSH_KEY" > private_key.pem && chmod 600 private_key.pem
 
       - name: Add remote host to known hosts
         run: |
